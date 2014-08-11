@@ -22,7 +22,7 @@
                 <label>
                 <span>Course Title</span>
                 
-                    <select multiple="multiple" name="courses_title">
+                    <select multiple="multiple" name="courses_title[]">
                         
                         
                         
