@@ -14,7 +14,31 @@
             <legend>Course Selection</legend>
                 <label>
                 <span>Student Name</span>
-                <input type="text" name="students_name"/>
+                
+                    <select  name="students_name">
+                        
+                        
+                        
+                            <?php
+                          
+                        
+                            $connect = mysql_connect('localhost','root','');
+                            $db = mysql_select_db('ftfl_3rd_batch',$connect);
+                            $query = "select students_name from students";
+                            
+                            $result_students_name = mysql_query($query);
+            
+                            while($row = mysql_fetch_array($result_students_name))
+                                {
+                                    echo "<option>".$row['students_name']."</option>";
+                                }
+                                        
+                                mysql_close($connect);    
+                                
+                            ?>
+                        
+                    </select>
+                
                 </label>
                 <br/>
                 <br/>
@@ -33,9 +57,9 @@
                             $db = mysql_select_db('ftfl_3rd_batch',$connect);
                             $query = "select courses_title from courses";
                             
-                            $result = mysql_query($query);
+                            $result_courses_title = mysql_query($query);
             
-                            while($row = mysql_fetch_array($result))
+                            while($row = mysql_fetch_array($result_courses_title))
                                 {
                                     echo "<option>".$row['courses_title']."</option>";
                                 }

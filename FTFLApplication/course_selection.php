@@ -21,7 +21,7 @@
 
 
                 
-                $result = mysql_query("INSERT into students(students_name) values ('$student_name')");
+                // $result = mysql_query("INSERT into students(students_name) values ('$student_name')");
                 
 
                 $student_query =mysql_query( "SELECT students_id from students where students_name = '$student_name'");
@@ -39,7 +39,7 @@
                 
                 $course_id_selected = $course_id['courses_id'];
 
-               $data = mysql_query("INSERT into `student's_courses` (students_id,courses_id) values ('$student_id_selected','$course_id_selected')");
+                $data = mysql_query("INSERT into `student's_courses` (students_id,courses_id) values ('$student_id_selected','$course_id_selected')");
                 
                 
                 
