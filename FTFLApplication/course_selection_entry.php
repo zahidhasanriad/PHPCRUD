@@ -22,9 +22,9 @@
                 <label>
                 <span>Course Title</span>
                 
-                    <select multiple="multiple">
+                    <select multiple="multiple" name="courses_title">
                         
-                        <option>Choose Course</option>
+                        
                         
                             <?php
                           
@@ -39,7 +39,9 @@
                                 {
                                     echo "<option>".$row['courses_title']."</option>";
                                 }
-
+                                        
+                                mysql_close($connect);    
+                                
                             ?>
                         
                     </select>
