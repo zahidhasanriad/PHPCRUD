@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap JavaScript Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/customize.css">
+   
+    
+  </head>
+  <body>
+      
+      <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Gorzon Solutions Pvt. Ltd.</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tracks <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">ITS</a></li>
+                <li><a href="#">ITES</a></li>
+                <li><a href="#">ITSS</a></li>
+                <li><a href="#">MGT</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">jobs</li>
+                <li><a href="#">FTFL</a></li>
+                <li><a href="#">LICT</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </div> 
+      
+    
+    <div class='container'>
+      <div class='row'>
+      </div>
+      <div class='row'>
+          <div class='col-sm-6'>
+            <h2>Attention FTFL!!!</h2>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              View News
+            </button>
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Azad Sir's Speech</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Laugh To Live.. Don't play Angry Bird</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+          </div><!-- /.col -->
+        <div class='col-sm-6'>
+          <h2>Notice Board</h2>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    FTFL Job Interview
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  This is the content for the first group. This is the content for the first group. This is the content for the first group. This is the content for the first group. This is the content for the first group. This is the content for the first group.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    FTFL Lunch Allowance
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                  This is the second group. This is the second group. This is the second group. This is the second group. This is the second group. This is the second group. This is the second group. This is the second group. This is the second group. This is the second group. This is the second group. This is the second group.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    FTFL Twitter Bootstrap
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                  This is the last group. This is the last group. This is the last group. This is the last group. This is the last group. This is the last group. This is the last group. This is the last group. This is the last group. This is the last group. This is the last group.
+                </div><!-- /.panel-body -->
+              </div><!-- /.collapse -->
+          </div><!-- /.panel -->
+        </div><!-- /.panel-group -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+      <div class='row'>
+        <div class='col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2'>
+        <h1>FTFL PHOTO GALLERY</h1>
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="img/image-1.jpg">
+                <div class="carousel-caption">
+                  Dog
+                </div>
+              </div>
+              <div class="item">
+                <img src="img/image-2.jpg">
+                <div class="carousel-caption">
+                  Cat
+                </div>
+              </div>
+              <div class="item">
+                <img src="img/image-3.jpg">
+                <div class="carousel-caption">
+                  Tree
+                </div>
+              </div>
+            </div><!-- /.carousel-inner -->
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div><!-- /.carousel -->
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+    
+   
+    
+    <!-- Pagination start -->
+    
+    <ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+    </ul> 
+    
+    <!-- Pagination end -->
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    <!-- Site footer -->
+    <div class="bottom" data-zahid="zahidul hasan" data-riad="riad" >
+        <div class="container">
+            
+            <div class="col-md-4">
+                <p><a href="#"><span class="glyphicon glyphicon-copyright-mark"></span></a> Gorzon Solutions Pvt. Ltd.</p>        
+            </div>
+            
+            <div class="col-md-4">
+                <p><a href="#"><span class="glyphicon glyphicon-globe"></span></a> www.gorzonsolutions.com </p>
+               
+            </div>
+            
+           
+
+        </div>
+    </div>
+    
+    
+   
+    
+    
+    
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
