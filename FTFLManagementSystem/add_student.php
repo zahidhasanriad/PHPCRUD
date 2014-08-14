@@ -17,21 +17,51 @@
 
     <body>
         
+        
+        
         <?php
-        include 'navigation_bar.php';
+        
+            //MySQL Database Connect 
+            include '/CommonFeatures/database_connection.php';
+        
+            
+
+            
+            
+            if(isset($_POST["students_Name"])){
+                if(isset($_POST["students_Email"])){
+                    
+                     $students_Name = $_POST["students_Name"];
+                     $students_Email = $_POST["students_Email"];
+                
+                
+
+                mysql_query("INSERT into students (students_name,students_email) values ('$students_Name','$students_Email')");
+                
+                // header('location: view_All_Students.php?msg=add');
+                }
+            }
+            
+            
+        ?>
+        
+        
+        
+        <?php
+        include '/CommonFeatures/navigation_bar.php';
         ?>
     
         
         <div class="container">
             <?php
-                    include 'dashboard_nav_bar.php';
+                    include '/CommonFeatures/dashboard_nav_bar.php';
             ?>
 
             <!--Thumbanil row-->
             <div class="row">
                 
                  <?php 
-                        include 'menu_bar.php';
+                        include '/CommonFeatures/menu_bar.php';
                 ?>
                 
                 <div class="col-md-8">
@@ -46,18 +76,18 @@
                     
                     <div class="row">
                         
-                        <form class ="col-md-7" class="form-group form-block" action="#" method="">
+                        <form class ="col-md-7" class="form-group form-block" action="#" method="post">
                             
                             <h3><label>Student's Name</label></h3>
-                            <input class="form-control" type="text" placeholder="Enter Your Name">
+                            <input class="form-control" type="text" name="students_Name" placeholder="Enter Your Name">
                             <br/>
                             
                             <h3><label>Student's Email</label></h3>
-                            <input class="form-control" type="text" placeholder="Enter Your Email">
+                            <input class="form-control" type="text" name="students_Email" placeholder="Enter Your Email">
                             <br/>
                           
                             
-                            <input class="form-control btn btn-success" type="submit" value="Add Student">
+                            <input class="form-control btn btn-success" type="submit" name="" value="Add Student">
                         </form>
                         
                     </div>
@@ -66,10 +96,9 @@
 
         </div>
          
-         <?php
-            include 'footer.php';
+        <?php
+            include '/CommonFeatures/footer.php';
         ?>
-    
          
          
         <script src="js/jquery.min.js"></script>
@@ -78,7 +107,8 @@
         
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-
+        
+        
 
     </body>
 </html>

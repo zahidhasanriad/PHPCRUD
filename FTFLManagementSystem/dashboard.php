@@ -16,20 +16,20 @@
         
        
         <?php
-        include 'navigation_bar.php';
+        include '/CommonFeatures/navigation_bar.php';
         ?>
         
         
         <div class="container">
             <?php
-                    include 'dashboard_nav_bar.php';
+                    include '/CommonFeatures/dashboard_nav_bar.php';
             ?>
 
             <!--Thumbanil row-->
             <div class="row">
                 
                 <?php 
-                        include 'menu_bar.php';
+                        include '/CommonFeatures/menu_bar.php';
                 ?>
                 
                 <div class="col-md-8">
@@ -93,7 +93,7 @@
         
         
         <?php
-            include 'footer.php';
+            include '/CommonFeatures/footer.php';
         ?>
         
         

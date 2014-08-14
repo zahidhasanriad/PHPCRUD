@@ -1,3 +1,5 @@
+create database `ftfl_mgt_system`;
+use `ftfl_mgt_system`;
 -- phpMyAdmin SQL Dump
 -- version 4.1.6
 -- http://www.phpmyadmin.net
