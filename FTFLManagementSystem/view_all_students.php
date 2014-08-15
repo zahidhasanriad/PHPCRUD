@@ -45,6 +45,8 @@
             <div class="row">
                   
                    <?php
+                   
+                    
 
                    //MySQL Database Connect 
                    include '/CommonFeatures/database_connection.php';
@@ -63,16 +65,20 @@
             echo"<tbody>";
             
             while ($data = mysql_fetch_object($query)) {
+                
                 echo "<tr>";
                 echo "<td>".$data->students_id."</td>";
                 echo "<td>".$data->students_name."</td>";
                 echo "<td>".$data->students_email."</td>";
-                echo"<td>"."<a href='student_details.php'>Details</a>"." | "."<a href='edit_student.php'>Edit</a>"." | "."<a href='delete_student.php'>Delete</a>"."</td>";
+                echo"<td>"."<a href='student_details.php?student_Id=".$data->students_id."'>Details</a>"." | "."<a href='edit_student.php'>Edit</a>"." | "."<a href='delete_student.php'>Delete</a>"."</td>";
                 echo "</tr>";
+                
+                
             }
             echo"</tbody>";
             echo "</table>";
-
+                
+                  
 
             ?>     
                         

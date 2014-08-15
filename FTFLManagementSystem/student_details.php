@@ -16,11 +16,7 @@
 
 <body>
     
-        <?php
-        //MySQL Database Connect 
-        include 'database_connection.php';
-        ?>
-    
+       
     
         <?php
             include '/CommonFeatures/navigation_bar.php';
@@ -53,16 +49,41 @@
                         <form class="form-group form-inline" action="" method="">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h4><label><b>Name: </b></label><br/></h4>
-                                    <h4><label><b>Email Address: </b></label><br/></h4>
+                                    <br/><h4><label><b>Name: </b></label><br/></h4>
+                                    <br/><h4><label><b>Email Address: </b></label><br/></h4>
                                     
                                 </div>
                                 <div class="col-md-8">
-                                    <h4><span>Tahsin Abrar</span><br/></h4>
-                                    <h4><span>tahsinabrar@gmail.com</span><br/></h4>
+                                    
+                                    <?php
+                                        
+                                        $student_Id = $_GET["student_Id"];
+                                                    
+                                        //MySQL Database Connect 
+                                        include '/CommonFeatures/database_connection.php';
+                                    
+                                        
+                                        $query = mysql_query("SELECT * from students WHERE students_id = $student_Id");
+                                        
+                                       // $students_id = $_GET["student_id"];
+                                        
+                                       // $query=mysql_query("SELECT students_name, students_email from students WHERE students_id='$students_id'");
+                                    
+                                        if($data = mysql_fetch_object($query)){
+                                        
+                                        echo "<hr><label><b>".$data->students_name."</b></label></h4>";
+                                        echo "<hr><label><b>".$data->students_email."</b></label><br/></h4>";
+                                            
+                                        }
+                                        
+                                    ?>
+    
                                     
                                 </div>
                             </div>
+                           
+                            <br/>
+                            <br/>
                             <a href="edit_student.php" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit"></span> Edit</a>
                             <a href="delete_student.php" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove"></span> Delete</a>
                         </form>
