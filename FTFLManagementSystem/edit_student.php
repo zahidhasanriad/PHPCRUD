@@ -17,10 +17,35 @@
 
     <body>
         
+            
         <?php
-        //MySQL Database Connect 
-        include '/CommonFeatures/database_connection.php';
+        
+            $student_name = $_POST['students_name'];
+                
+                //MySQL Database Connect 
+                include '/CommonFeatures/database_connection.php';
+
+                $student_query =mysql_query( "SELECT students_id from students where students_name = '$student_name'");
+                
+               
+                $student_id = mysql_fetch_array($student_query);
+                $student_id_selected = $student_id['students_id'];
+        
+
+                $query = mysql_query("SELECT * from students WHERE students_id=$student_id_selected");
+
+                $data = mysql_fetch_object($query);
+
+                if(isset($_POST["student_Name"]) && isset($_POST["student_Email"])){
+                $student_Name = $_POST["student_Name"];
+                $student_Email = $_POST["student_Email"];
+
+                mysql_query("UPDATE students SET students_name='$student_Name',students_email='$student_Email'  WHERE students_id=$student_id_selected");
+                //header('location: student_List.php?msg=edit');
+                }
         ?>
+        
+        
         
         <?php
         include '/CommonFeatures/navigation_bar.php';
@@ -51,14 +76,38 @@
                     </div>
                     <div class="row">
                         
-                        <form class ="col-md-7" class="form-group form-block" action="#" method="">
+                        <form class ="col-md-7" class="form-group form-block" action="" method="post">
                             
-                            <h3><label>Student's Name</label></h3>
-                            <input class="form-control" type="text" placeholder="Edit Student Name">
+                            <h3><label>Student Name: </label></h3>
+                                  <select  name="students_name" class="form-control">
+                                   
+                                      <?php
+                          
+                                      //MySQL Database Connect 
+                                      include '/CommonFeatures/database_connection.php';
+                            
+                                      
+                                      $query = "select students_name from students";
+                            
+                                      $result_students_name = mysql_query($query);
+            
+                                      while($row = mysql_fetch_array($result_students_name))
+                                      {
+                                        echo "<option>".$row['students_name']."</option>";
+                                      }
+                                        
+                                    mysql_close(mysql_connect('localhost','root',''));    
+                                
+                                    ?>
+                                  </select>
+                                  <br/>
+                            
+                            <h3><label>Student's New Name</label></h3>
+                            <input class="form-control" type="text" name="student_Name" placeholder="Edit Student Name">
                             <br/>
                             
-                            <h3><label>Student's Email</label></h3>
-                            <input class="form-control" type="text" placeholder="Edit Student Email">
+                            <h3><label>Student's New Email</label></h3>
+                            <input class="form-control" type="text" name="student_Email" placeholder="Edit Student Email">
                             <br/>
                           
                             <input class="form-control btn btn-success" type="submit" value="Update Student">
