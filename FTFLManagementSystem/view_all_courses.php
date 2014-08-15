@@ -71,7 +71,7 @@
                     echo "<td>".$data->courses_id."</td>";
                     echo "<td>".$data->courses_code."</td>";
                     echo "<td>".$data->courses_name."</td>";
-                    echo"<td>"."<a href='edit_course.php'>Edit</a>"." | "."<a href='delete_course.php'>Delete</a>"."</td>";
+                    echo"<td>"."<a href='edit_course.php'>Edit</a>"." | "."<a href='delete_course.php?course_Id=".$data->courses_id."'>Delete</a>"."</td>";
                     echo "</tr>";
                     }
                 

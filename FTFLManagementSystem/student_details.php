@@ -46,7 +46,7 @@
             </div>
             
                 <div class="row">
-                        <form class="form-group form-inline" action="" method="">
+                    <form class="form-group form-inline" action="" method="">
                             <div class="row">
                                 <div class="col-md-4">
                                     <br/><h4><label><b>Name: </b></label><br/></h4>
@@ -73,7 +73,9 @@
                                         
                                         echo "<hr><label><b>".$data->students_name."</b></label></h4>";
                                         echo "<hr><label><b>".$data->students_email."</b></label><br/></h4>";
-                                            
+                                        echo "<a href='edit_student.php' class='btn btn-primary' role='button'><span class='glyphicon glyphicon-edit'></span> Edit</a>";
+                                        echo "<a href='delete_single_student.php?student_Id=".$data->students_id."' class='btn btn-danger' role='button'><span class='glyphicon glyphicon-remove'></span> Delete</a>";
+                                        
                                         }
                                         
                                     ?>
@@ -82,10 +84,8 @@
                                 </div>
                             </div>
                            
-                            <br/>
-                            <br/>
-                            <a href="edit_student.php" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-                            <a href="delete_student.php" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                           
+                           
                         </form>
                     </div>
         </div>
