@@ -17,10 +17,6 @@
 
     <body>
         
-        <?php
-        //MySQL Database Connect 
-        include '/CommonFeatures/database_connection.php';
-        ?>
         
         <?php
         include '/CommonFeatures/navigation_bar.php';
@@ -53,15 +49,40 @@
                     <div class="row">
                         <div class="col-md-7 center-block">
                             
-                            <form class="form-group" action="" method="">
+                            <form class="form-group" action="editing_course.php" method="post">
                                 
-                                <h3> <label>Course Code: </label> </h3>
-                                <input class="form-control" type="text" placeholder="Edit Course Code">
+                                <h3><label>Course Title: </label></h3>
+                                  <select  name="courses_name" class="form-control">
+                                   
+                                      <?php
+                          
+                                      //MySQL Database Connect 
+                                      include '/CommonFeatures/database_connection.php';
+                            
+                                      
+                                      $query = "select courses_name from courses";
+                            
+                                      $result_courses_name = mysql_query($query);
+            
+                                      while($row = mysql_fetch_array($result_courses_name))
+                                      {
+                                        echo "<option>".$row['courses_name']."</option>";
+                                      }
+                                        
+                                    mysql_close(mysql_connect('localhost','root',''));    
+                                
+                                    ?>
+                                  </select>
+                                  <br/>
+                                
+                                <h3> <label>Course New Code: </label> </h3>
+                                <input class="form-control" type="text" name="courses_Code" placeholder="Edit Course Code">
                                 <br/>
                             
-                                <h3> <label>Course Title: </label> </h3>
-                                <input class="form-control" type="text" placeholder="Edit Course Title">
+                                <h3> <label>Course New Title: </label> </h3>
+                                <input class="form-control" type="text" name="courses_Name" placeholder="Edit Course Title">
                                 <br/>
+                                
                                 <input class="form-control btn btn-success" type="submit" value="Update Course">
                                 
                             </form>

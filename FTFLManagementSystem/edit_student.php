@@ -18,33 +18,6 @@
     <body>
         
             
-        <?php
-        
-            $student_name = $_POST['students_name'];
-                
-                //MySQL Database Connect 
-                include '/CommonFeatures/database_connection.php';
-
-                $student_query =mysql_query( "SELECT students_id from students where students_name = '$student_name'");
-                
-               
-                $student_id = mysql_fetch_array($student_query);
-                $student_id_selected = $student_id['students_id'];
-        
-
-                $query = mysql_query("SELECT * from students WHERE students_id=$student_id_selected");
-
-                $data = mysql_fetch_object($query);
-
-                if(isset($_POST["student_Name"]) && isset($_POST["student_Email"])){
-                $student_Name = $_POST["student_Name"];
-                $student_Email = $_POST["student_Email"];
-
-                mysql_query("UPDATE students SET students_name='$student_Name',students_email='$student_Email'  WHERE students_id=$student_id_selected");
-                //header('location: student_List.php?msg=edit');
-                }
-        ?>
-        
         
         
         <?php
@@ -76,7 +49,7 @@
                     </div>
                     <div class="row">
                         
-                        <form class ="col-md-7" class="form-group form-block" action="" method="post">
+                        <form class ="col-md-7" class="form-group form-block" action="editing_student.php" method="post">
                             
                             <h3><label>Student Name: </label></h3>
                                   <select  name="students_name" class="form-control">
