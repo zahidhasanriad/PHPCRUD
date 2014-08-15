@@ -43,41 +43,40 @@
                 <br/>
             </div>
             <div class="row">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
+                  
+                   <?php
+
+                   //MySQL Database Connect 
+                   include '/CommonFeatures/database_connection.php';
+
+            $query = mysql_query("SELECT * from students Order by students_id");
+
+            echo "<table class='table table-hover'>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th>STUDENT ID</th>";
+            echo "<th>STUDENT NAME</th>";
+            echo "<th>STUDENT EMAIL</th>";
+            echo "<th>ACTION</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo"<tbody>";
+            
+            while ($data = mysql_fetch_object($query)) {
+                echo "<tr>";
+                echo "<td>".$data->students_id."</td>";
+                echo "<td>".$data->students_name."</td>";
+                echo "<td>".$data->students_email."</td>";
+                echo"<td>"."<a href='student_details.php'>Details</a>"." | "."<a href='edit_student.php'>Edit</a>"." | "."<a href='delete_student.php'>Delete</a>"."</td>";
+                echo "</tr>";
+            }
+            echo"</tbody>";
+            echo "</table>";
+
+
+            ?>     
                         
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Tahsin Abrar</td>
-                        <td>tahsinabrar@gmail.com</td>
-                        
-                        <td>
-                            <a href="student_details.php">Details</a> |
-                            <a href="edit_student.php">Edit</a> |
-                            <a href="delete_student.php">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Towfiqur Rahman</td>
-                        <td>towfiqurrahman@gmail.com</td>
-                        
-                        <td>
-                            <a href="student_details.php">Details</a> |
-                            <a href="edit_student.php">Edit</a> |
-                            <a href="delete_student.php">Delete</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                
             </div>
         </div>
     </div>

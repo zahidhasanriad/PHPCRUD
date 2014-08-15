@@ -47,37 +47,39 @@
                 
                            
                     
-                   <?php
+                <?php
 
-                   //MySQL Database Connect 
-                   include '/CommonFeatures/database_connection.php';
+                    //MySQL Database Connect 
+                    include '/CommonFeatures/database_connection.php';
 
-            $query = mysql_query("SELECT * from courses Order by courses_id");
+                    $query = mysql_query("SELECT * from courses Order by courses_id");
 
-            echo "<table class='table table-hover'>";
-            echo "<thead>";
-            echo "<tr>";
-            echo "<th>COURSE ID</th>";
-            echo "<th>COURSE CODE</th>";
-            echo "<th>COURSE TITLE</th>";
-            echo "<th>ACTION</th>";
-            echo "</tr>";
-            echo "</thead>";
-            echo"<tbody>";
+                    echo "<table class='table table-hover'>";
+                    echo "<thead>";
+                    echo "<tr>";
+                    echo "<th>COURSE ID</th>";
+                    echo "<th>COURSE CODE</th>";
+                    echo "<th>COURSE TITLE</th>";
+                    echo "<th>ACTION</th>";
+                    echo "</tr>";
+                    echo "</thead>";
+                    echo"<tbody>";
             
-            while ($data = mysql_fetch_object($query)) {
-                echo "<tr>";
-                echo "<td>".$data->courses_id."</td>";
-                echo "<td>".$data->courses_code."</td>";
-                echo "<td>".$data->courses_name."</td>";
-                echo"<td>"."<a href='edit_course.php'>Edit</a>"." | "."<a href='delete_course.php'>Delete</a>"."</td>";
-                echo "</tr>";
-            }
-            echo"</tbody>";
-            echo "</table>";
+                    while ($data = mysql_fetch_object($query)) 
+                    {
+                    echo "<tr>";
+                    echo "<td>".$data->courses_id."</td>";
+                    echo "<td>".$data->courses_code."</td>";
+                    echo "<td>".$data->courses_name."</td>";
+                    echo"<td>"."<a href='edit_course.php'>Edit</a>"." | "."<a href='delete_course.php'>Delete</a>"."</td>";
+                    echo "</tr>";
+                    }
+                
+                    echo"</tbody>";
+                    echo "</table>";
 
 
-            ?>     
+                ?>     
                         
                     
             </div>
