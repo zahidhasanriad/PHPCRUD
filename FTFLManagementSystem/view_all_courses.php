@@ -16,10 +16,7 @@
 
 <body>
     
-        <?php
-        //MySQL Database Connect 
-        include 'database_connection.php';
-        ?>
+      
     
         <?php
             include '/CommonFeatures/navigation_bar.php';
@@ -43,47 +40,46 @@
                     
             <div class="row">
                 <h1>List of Courses</h1>
+                <br/>
+                
             </div>
             <div class="row">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Title</th>
-                        <th>Code</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Laravel</td>
-                        <td>L-003</td>
-                        <td>
-                            <a href="edit_course.php">Edit</a> |
-                            <a href="delete_course.php">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Unity 3D</td>
-                        <td>U-102</td>
-                        <td>
-                            <a href="edit_course.php">Edit</a> |
-                            <a href="delete_course.php">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>ASP.net</td>
-                        <td>A-400</td>
-                        <td>
-                            <a href="edit_course.php">Edit</a> |
-                            <a href="delete_course.php">Delete</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                
+                           
+                    
+                   <?php
+
+                   //MySQL Database Connect 
+                   include '/CommonFeatures/database_connection.php';
+
+            $query = mysql_query("SELECT * from courses Order by courses_id");
+
+            echo "<table class='table table-hover'>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th>COURSE ID</th>";
+            echo "<th>COURSE CODE</th>";
+            echo "<th>COURSE TITLE</th>";
+            echo "<th>ACTION</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo"<tbody>";
+            
+            while ($data = mysql_fetch_object($query)) {
+                echo "<tr>";
+                echo "<td>".$data->courses_id."</td>";
+                echo "<td>".$data->courses_code."</td>";
+                echo "<td>".$data->courses_name."</td>";
+                echo"<td>"."<a href='edit_course.php'>Edit</a>"." | "."<a href='delete_course.php'>Delete</a>"."</td>";
+                echo "</tr>";
+            }
+            echo"</tbody>";
+            echo "</table>";
+
+
+            ?>     
+                        
+                    
             </div>
         </div>
     </div>
