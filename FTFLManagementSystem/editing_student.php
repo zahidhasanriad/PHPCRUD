@@ -1,10 +1,4 @@
-<html>
-    <head>
-        
-        <title>Student Editing Conformation</title>
-    </head>
-    
-    <body>
+
         
         <?php
         
@@ -37,8 +31,7 @@
                 
                 if($result){
                     
-                    echo 'Student Info Successfully Updated';   
-                    
+                    header('location: edit_student.php?msg=Student Info Successfully Updated');
                 }
                 
                 else {
@@ -47,10 +40,4 @@
                 
         ?>
         
-        <br/>
-        <br/>
-        <a href="edit_student.php">Back To Edit Student</a>
-        
-    </body>
-    
-</html>
+       

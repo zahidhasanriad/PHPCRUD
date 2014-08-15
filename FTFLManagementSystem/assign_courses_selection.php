@@ -22,7 +22,7 @@
 
                 mysql_query("INSERT into `assign_courses` (students_id,courses_id) values ('$student_id_selected','$course_id_selected')");
                 
-                
+                header('location: assign_courses.php?msg=course assigned');
                 
                 }
                 

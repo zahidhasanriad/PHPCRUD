@@ -1,10 +1,4 @@
-<html>
-    <head>
-        
-        <title>Course Editing Conformation</title>
-    </head>
-    
-    <body>
+
         
         <?php
         
@@ -37,7 +31,7 @@
                 
                 if($result){
                     
-                    echo 'Course Info Successfully Updated';   
+                     header('location: edit_course.php?msg=Course Info Successfully Updated');   
                     
                 }
                 
@@ -47,10 +41,4 @@
                 
         ?>
         
-        <br/>
-        <br/>
-        <a href="edit_course.php">Back To Edit Course</a>
         
-    </body>
-    
-</html>

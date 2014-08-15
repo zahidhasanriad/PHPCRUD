@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                   
-                   <?php
+            <?php
                    
                     
 
@@ -70,7 +70,7 @@
                 echo "<td>".$data->students_id."</td>";
                 echo "<td>".$data->students_name."</td>";
                 echo "<td>".$data->students_email."</td>";
-                echo"<td>"."<a href='student_details.php?student_Id=".$data->students_id."'>Details</a>"." | "."<a href='edit_student.php'>Edit</a>"." | "."<a href='delete_student.php'>Delete</a>"."</td>";
+                echo"<td>"."<a href='student_details.php?student_Id=".$data->students_id."'>Details</a>"." | "."<a href='edit_student.php'>Edit</a>"." | "."<a href='delete_student.php?student_Id=".$data->students_id."'>Delete</a>"."</td>";
                 echo "</tr>";
                 
                 
